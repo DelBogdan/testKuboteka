@@ -91,6 +91,7 @@ class CartPage(Base):
 
     # Methods
 
+    """Проверка корзины и проверка применения скидочного купона(негативное)"""
     def cart(self):
         self.get_current_url()
         self.input_coupon_send()
@@ -101,6 +102,7 @@ class CartPage(Base):
         self.click_confirm_button()
         self.assert_word(self.get_cart_word(), "3. Способ доставки")
 
+    """Очистка корзины"""
     def cart_clear(self):
         self.get_current_url()
         self.click_clear_cart()

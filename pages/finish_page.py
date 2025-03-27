@@ -78,6 +78,7 @@ class FinishPage(Base):
 
     # Methods
 
+    """Оформление заказа, выбор доставки и путь до оплаты"""
     def finish(self):
         self.get_current_url()
         self.input_last_name("Дель")
