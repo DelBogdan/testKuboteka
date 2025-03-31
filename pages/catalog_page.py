@@ -6,6 +6,7 @@ from selenium.webdriver.support import expected_conditions as EC
 
 from base.base_class import Base
 from pages.login_page import LoginPage
+from utilities.logger import Logger
 
 
 class CatalogPage(Base):
@@ -149,6 +150,7 @@ class CatalogPage(Base):
     # Methods
     """Добавление товара в корзину. Использование фильтров"""
     def select_product(self):
+        Logger.add_start_step(method="select_product")
         self.get_current_url()
         self.click_catalog_button()
         self.click_lego_technic_button()
@@ -161,14 +163,18 @@ class CatalogPage(Base):
         self.click_first_product_in_list()
         self.click_cart()
         self.assert_url("https://kuboteka.shop/cart/")
+        Logger.add_end_step(url=self.driver.current_url, method="select_product")
 
     """Переход к корзине и проверка, что мы находимся в корзине"""
     def select_cart(self):
+        Logger.add_start_step(method="select_cart")
         self.click_cart()
         self.assert_url("https://kuboteka.shop/cart/")
+        Logger.add_end_step(url=self.driver.current_url, method="select_cart")
 
     """Добавление товара в избранное и проверка товара в избранном"""
     def add_favorites_and_check(self):
+        Logger.add_start_step(method="add_favorites_and_check")
         self.click_catalog_button()
         self.click_lego_technic_button()
         self.click_add_favorite_button()
@@ -179,6 +185,7 @@ class CatalogPage(Base):
         self.check_article(article, self.get_article().text)
         time.sleep(3)
         self.get_screenshot("Favorite_")
+        Logger.add_end_step(url=self.driver.current_url, method="add_favorites_and_check")
 
 
 

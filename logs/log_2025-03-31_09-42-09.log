@@ -1,0 +1,99 @@
+
+-----
+Test: test_clear_cart.py::test_buy_product (call)
+Start time: 2025-03-31 09:42:13.547910
+Start name method: authorization
+
+End time: 2025-03-31 09:42:20.659901
+End name method: authorization
+URL: https://kuboteka.shop/order-history/
+
+-----
+
+-----
+Test: test_clear_cart.py::test_buy_product (call)
+Start time: 2025-03-31 09:42:20.659901
+Start name method: select_cart
+
+End time: 2025-03-31 09:42:22.833718
+End name method: select_cart
+URL: https://kuboteka.shop/cart/
+
+-----
+
+-----
+Test: test_clear_cart.py::test_buy_product (call)
+Start time: 2025-03-31 09:42:22.833718
+Start name method: cart_clear
+
+End time: 2025-03-31 09:42:27.144585
+End name method: cart_clear
+URL: https://kuboteka.shop/cart/
+
+-----
+
+-----
+Test: test_buy_product.py::test_buy_product (call)
+Start time: 2025-03-31 09:42:37.168190
+Start name method: authorization
+
+End time: 2025-03-31 09:42:43.693476
+End name method: authorization
+URL: https://kuboteka.shop/order-history/
+
+-----
+
+-----
+Test: test_buy_product.py::test_buy_product (call)
+Start time: 2025-03-31 09:42:43.693476
+Start name method: select_product
+
+End time: 2025-03-31 09:42:54.920088
+End name method: select_product
+URL: https://kuboteka.shop/cart/
+
+-----
+
+-----
+Test: test_buy_product.py::test_buy_product (call)
+Start time: 2025-03-31 09:42:54.921089
+Start name method: cart
+
+End time: 2025-03-31 09:43:02.785558
+End name method: cart
+URL: https://kuboteka.shop/simplecheckout/
+
+-----
+
+-----
+Test: test_buy_product.py::test_buy_product (call)
+Start time: 2025-03-31 09:43:02.786565
+Start name method: finish
+
+End time: 2025-03-31 09:43:08.759096
+End name method: finish
+URL: https://securepayments.tinkoff.ru/K5EPRy3U
+
+-----
+
+-----
+Test: test_add_to_favorites.py::test_add_to_favorites (call)
+Start time: 2025-03-31 09:43:18.902573
+Start name method: authorization
+
+End time: 2025-03-31 09:43:25.627428
+End name method: authorization
+URL: https://kuboteka.shop/order-history/
+
+-----
+
+-----
+Test: test_add_to_favorites.py::test_add_to_favorites (call)
+Start time: 2025-03-31 09:43:25.627428
+Start name method: add_favorites_and_check
+
+End time: 2025-03-31 09:43:35.936105
+End name method: add_favorites_and_check
+URL: https://kuboteka.shop/wishlist/
+
+-----

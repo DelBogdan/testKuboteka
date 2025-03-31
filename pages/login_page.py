@@ -5,6 +5,7 @@ from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
 from base.base_class import Base
+from utilities.logger import Logger
 
 
 class LoginPage(Base):
@@ -76,6 +77,7 @@ class LoginPage(Base):
 
     """Авторизация пользователя"""
     def authorization(self):
+        Logger.add_start_step(method="authorization")
         self.driver.get(self.url)
         self.driver.maximize_window()
         self.get_current_url()
@@ -84,7 +86,8 @@ class LoginPage(Base):
         except TimeoutException as exception:
             print("The information banner was not found")
         self.click_personal_account()
-        self.input_user_name("delbogdan@yandex.ru")
+        self.input_user_name("test_qa_2000@mail.ru")
         self.input_password("Zz123456@")
         self.click_login_button()
         self.assert_word(self.get_main_word(), "Личный кабинет")
+        Logger.add_end_step(url=self.driver.current_url, method="authorization")

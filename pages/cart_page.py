@@ -6,6 +6,7 @@ from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
 from base.base_class import Base
+from utilities.logger import Logger
 
 
 class CartPage(Base):
@@ -93,6 +94,7 @@ class CartPage(Base):
 
     """Проверка корзины и проверка применения скидочного купона(негативное)"""
     def cart(self):
+        Logger.add_start_step(method="cart")
         self.get_current_url()
         self.input_coupon_send()
         self.click_coupon_send_enter_button()
@@ -101,13 +103,16 @@ class CartPage(Base):
         time.sleep(3)
         self.click_confirm_button()
         self.assert_word(self.get_cart_word(), "3. Способ доставки")
+        Logger.add_end_step(url=self.driver.current_url, method="cart")
 
     """Очистка корзины"""
     def cart_clear(self):
+        Logger.add_start_step(method="cart_clear")
         self.get_current_url()
         self.click_clear_cart()
         time.sleep(3)
         self.get_screenshot("Empty cart_")
+        Logger.add_end_step(url=self.driver.current_url, method="cart_clear")
 
 
 

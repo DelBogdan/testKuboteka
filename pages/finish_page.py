@@ -5,6 +5,7 @@ from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
 from base.base_class import Base
+from utilities.logger import Logger
 
 
 class FinishPage(Base):
@@ -80,6 +81,7 @@ class FinishPage(Base):
 
     """Оформление заказа, выбор доставки и путь до оплаты"""
     def finish(self):
+        Logger.add_start_step(method="finish")
         self.get_current_url()
         self.input_last_name("Дель")
         self.input_first_name("Богдан")
@@ -90,3 +92,4 @@ class FinishPage(Base):
         self.assert_finish_url("https://securepayments.tinkoff.ru")
         time.sleep(3)
         self.get_screenshot("Finish_")
+        Logger.add_end_step(url=self.driver.current_url, method="finish")
